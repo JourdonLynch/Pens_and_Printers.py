@@ -44,7 +44,8 @@ figure 4
 <img width="493" alt="Screenshot 2025-01-12 at 2 38 00 PM" src="https://github.com/user-attachments/assets/ebf20833-3556-4cb3-bc4c-7cb53232037f" />
 
 
-To understand how different sales methods performed better at different points during the product launch revenue by sales method was further broken down by week.
+To understand how different sales methods performed better at different points during the product launch revenue by sales method was further broken down by week. The median sales revenue per customer and interquartile range per customer increased for all sales methods increased throughout the period. However the email + call sales method saw sharper increases throughout the period as time went on.
+
 figure 5
 
 <img width="615" alt="Screenshot 2025-01-18 at 4 47 15 PM" src="https://github.com/user-attachments/assets/bb5a11dd-be41-4d8c-9ed3-b5f74df894a1" />
