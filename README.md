@@ -44,7 +44,7 @@ figure 4
 <img width="493" alt="Screenshot 2025-01-12 at 2 38 00 PM" src="https://github.com/user-attachments/assets/ebf20833-3556-4cb3-bc4c-7cb53232037f" />
 
 
-To understand how different sales methods performed better at different points during the product launch revenue by sales method was further broken down by week. The median sales revenue per customer and interquartile range per customer increased for all sales methods increased throughout the period. However the email + call sales method saw sharper increases throughout the period as time went on.
+To understand how different sales methods performed better at different points during the product launch revenue by sales method was further broken down by week. The median sales revenue per customer and minimum interquartile range value per customer increased for all sales methods increased throughout the period. However the email + call sales method saw sharper increases throughout the period as time went on.
 
 figure 5
 
@@ -59,6 +59,8 @@ figure 5
 
 
 To track the effectiveness of sales methods, the revenue week-over-week metric was chosen. Revenue was grouped by weeks since product launch and sales method before summing the total for each week using the sum() function. After this, the unstack() function was used to pivot the data frame based on the sales_method column and return a dataframe with sales method as columns and weeks since launch as rows. The pct_change() function was then used to return the percent change of revenue week-over-week as a decimal. A consistently positive week-over-week metric, along with tracking total revenue over each week during the test period, will indicate which sales method is most effective. Results for the most recent week can be used as a basis moving forward. In week six email and call, call, and email recorded revenue week-over-week values of -12.35%, -47.21% and -68.12%% respectively.
+
+
 
 # Recommendations
 To support the goal of selling new products effectively the right sales method must be prioritized. Based on the revenue week-over-week metric, revenue spread across time, and the revenue spread across sales methods the email and call sales method is the most effecient at generating revenue making it the best method to sell the new product line and recoup the company's capital investment. It provides the highest average sales price per customer. While it required more effort than the email method alone, it required less total time investment than the call method. The email sales method showed greater revenue over the short term, however this was due to the method being used more frequently. It is recommended that the email and call method is used to  market the new product lines to customers.
