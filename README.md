@@ -53,7 +53,7 @@ figure 5
 
 Over the six week period the email and call method experienced a sharp increase in weekly revenue recorded in dollars, starting at 16,885 and ending at 111,152. The call method saw fluctuations in its revenue, starting at a weekly revenue of 26,159 and ending at 28,253. Lastly the email method saw a sharp decline in total revenue, dropping from a weekly revenue of 230,000 down to 23,706.
 
-figure 5
+figure 6
 
 <img width="691" alt="Screenshot 2025-01-12 at 4 06 23 PM" src="https://github.com/user-attachments/assets/45322356-135e-4a05-a4ae-693eaa59c2e7" />
 
