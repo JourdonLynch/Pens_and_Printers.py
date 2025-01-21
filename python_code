@@ -129,8 +129,7 @@ print(weekly_percent_change)
 print(weekly_percent_change.pct_change())
 
 
-
-#count of customers by sales method and week
+#Count of customers by sales method and week
 Product_Sales.groupby(['sales_method', 'week'])['customer_id'].count().unstack().plot(kind='bar')
 plt.title('Customer ID Count by Sales Method and Week')
 plt.show()
