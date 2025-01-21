@@ -59,7 +59,7 @@ print(products_sold_by_state)
 
 #Sales Method Breakdown
 
-# How many customers were there for each approach?
+#How many customers were there for each approach?
 count_of_customers = Product_Sales.groupby('sales_method')['customer_id'].count()
 print(count_of_customers)
 
@@ -70,6 +70,7 @@ plt.show()
 
 
 #What does the distribition of the revenue look like overall?
+
 #Mean and stanard deviation
 print('Mean' + ': ' + str(Product_Sales['revenue'].mean().round(2)))
 print('Standard Deviation' + ': ' + str(Product_Sales['revenue'].std(ddof=1).round(2)))
@@ -116,8 +117,7 @@ plt.title('Revenue Spread Across Time')
 plt.show()
 
 #Visualization of revenue distribution over time
-Product_Sales.groupby(['sales_method', 'week'])['revenue'].sum().unstack().plot(kind='box')
-sns.catplot(x='week', y='revenue', data=Product_Sales, hue='sales_method', kind='box', col='sales_method')
+sns.catplot(x='week', y='revenue', data=Product_Sales, hue='sales_method', kind='box')
 plt.title('Revenue Distribution by Week and Sales Method')
 plt.show()
 
