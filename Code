@@ -122,7 +122,7 @@ plt.title('Revenue Distribution by Week and Sales Method')
 plt.show()
 
 
-#How can revenue change we tracked week-to-week
+#How can revenue change be tracked week-to-week
 #Percent Change in Revenue WOW
 weekly_percent_change = Product_Sales.groupby(['week','sales_method'])['revenue'].sum().unstack()
 print(weekly_percent_change)
