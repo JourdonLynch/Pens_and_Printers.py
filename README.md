@@ -7,13 +7,19 @@ The Pens and Printers provides was founded in 1984 and provides high-quality off
 # Problem statement
 Launching a new product line is expensive and Pens and Printers need to ensure that they are using the most effective technique to sell their new product line.
 
+# Data Validation and Cleaning
 
-# Data Validation
-After loading the csv file into a pandas dataframe using pd.read_csv(), the dtypes attribute was used to return the data type of each column. The first 10 rows of the dataframe were taken using the head() function.  Columns week, nb_sold, years_as_customer, and nb_site_visits remained as the int64 datatype, and revenue was left as the float64 datatype. The sales_method, customer_id, and state columns were converted from object datatype to string datatype using the astype() function.
-
-
-# Data Cleaning
-The sales method column appeared to contain improperly formatted strings, so the value_counts() function was used to group entries, allowing errors to be identified. The replace() function was then used on the dataframe to replace typos with correct spellings. It was found that the revenue column contained a number of null values for observations where there were products sold. This was found using the isnull() function in conjunction with the sum() function to return 1,074 nulls. The min() function was applied to the nb_sold column, which returned a positive number to ensure that in every observation there was a product sold. Observations with products sold but no revenue were removed using the pd.dropna() function. The decision to do this was based on the assumption that if there were products sold, there had to be resulting revenue.
+• The Pandas, matplotlib.pyplot, and seaborn libraries were imported to conduct the analysis.
+• The CSV file was loaded into a pandas dataframe using pd.read_csv() and information on the dataframe was gathered using .head(), .info() and .describe().
+• The **Week** column of the int64 data type contained values from 1-6. No null values were observed. No changes were made to this column.
+• The **sales_method** column of the object data type contained 5 distinct values (Email, Call, Email + Call, em + call, email) when only 3 were supposed to be observed. Two aditional values were caused by      incorrect capitalization and typos. These were replaced with correct spellings using .replace() so that the column only contained the following unique values: Email, Call, and Email + Call. 
+• The **customer_id** column of the object data type contained a combination of letters, numbers and characters representing customers and had no null values. No changes were made to this column.
+• The **nb_sold** column of the int64 data type and contained no null or negative values. No changes were made to this column.
+• The **years_as_customer** column of the int64 data type contained values between 0 and 63 and no null values. The company was established in 1984; therefore, the maximum value of this column should be 41. Two     fields were found to have values of 47 and 63. These values were assumed to be errors in data entry and replaced with the maximum realistic value of 41.
+• The **revenue** column of the float64 data type had 1,074 null values. Instead of removing all rows with missing revenue values, the null values were replaced with the mean revenue of each sales method. 
+• The **nb_site_visits** column of the int64 data type contained the number of website visits for each customer and had no null values. No changes were made to this column.
+• The **state** column of the object data type contained the state of each customer and no null values. As there are only 50 states the column was checked for unique values and returned 50. No chages were made to   this column.
+• The dataframe was checked for duplicate rows, and none were found. The final dataframe contained 15000 rows, 8 columns, and 0 null values.
 
 # Exploratory Analysis
 Customers for each sales method approach were found by grouping the customer_id column by sales method using the groupby() function and then counting each group of customers using the count() function. Email was the largest approach, with 6922 customers, followed by call with 4781 and email and call with 2223. 
