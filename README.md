@@ -10,8 +10,11 @@ Launching a new product line is expensive and Pens and Printers need to ensure t
 # Data Validation and Cleaning
 
 • The Pandas, matplotlib.pyplot, and seaborn libraries were imported to conduct the analysis.
+
 • The CSV file was loaded into a pandas dataframe using pd.read_csv() and information on the dataframe was gathered using .head(), .info() and .describe().
+
 • The **Week** column of the int64 data type contained values from 1-6. No null values were observed. No changes were made to this column.
+
 • The **sales_method** column of the object data type contained 5 distinct values (Email, Call, Email + Call, em + call, email) when only 3 were supposed to be observed. Two aditional values were caused by      incorrect capitalization and typos. These were replaced with correct spellings using .replace() so that the column only contained the following unique values: Email, Call, and Email + Call. 
 • The **customer_id** column of the object data type contained a combination of letters, numbers and characters representing customers and had no null values. No changes were made to this column.
 • The **nb_sold** column of the int64 data type and contained no null or negative values. No changes were made to this column.
