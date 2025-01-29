@@ -16,12 +16,19 @@ Launching a new product line is expensive and Pens and Printers need to ensure t
 • The **Week** column of the int64 data type contained values from 1-6. No null values were observed. No changes were made to this column.
 
 • The **sales_method** column of the object data type contained 5 distinct values (Email, Call, Email + Call, em + call, email) when only 3 were supposed to be observed. Two aditional values were caused by      incorrect capitalization and typos. These were replaced with correct spellings using .replace() so that the column only contained the following unique values: Email, Call, and Email + Call. 
+
 • The **customer_id** column of the object data type contained a combination of letters, numbers and characters representing customers and had no null values. No changes were made to this column.
+
 • The **nb_sold** column of the int64 data type and contained no null or negative values. No changes were made to this column.
+
 • The **years_as_customer** column of the int64 data type contained values between 0 and 63 and no null values. The company was established in 1984; therefore, the maximum value of this column should be 41. Two     fields were found to have values of 47 and 63. These values were assumed to be errors in data entry and replaced with the maximum realistic value of 41.
-• The **revenue** column of the float64 data type had 1,074 null values. Instead of removing all rows with missing revenue values, the null values were replaced with the mean revenue of each sales method. 
+
+• The **revenue** column of the float64 data type had 1,074 null values. Instead of removing all rows with missing revenue values, the null values were replaced with the mean revenue of each sales method.
+
 • The **nb_site_visits** column of the int64 data type contained the number of website visits for each customer and had no null values. No changes were made to this column.
+
 • The **state** column of the object data type contained the state of each customer and no null values. As there are only 50 states the column was checked for unique values and returned 50. No chages were made to   this column.
+
 • The dataframe was checked for duplicate rows, and none were found. The final dataframe contained 15000 rows, 8 columns, and 0 null values.
 
 # Exploratory Analysis
