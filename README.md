@@ -1,11 +1,9 @@
 # Pens_and_Printers.py
 
 # Introduction
-The Pens and Printers provides was founded in 1984 and provides high-quality office products to large organizations. While they don’t directly produce these products, customers trust them to provide quality products. Over time the way consumers buy products changes and to maintain relevance businesses must adapt their sales methods. The pens and Printers company is launching a new product line and are interested in knowing how different sales methods resonate with their customers.
+The Pens and Printers company founded in 1984 provides high-quality office products to large organizations. While they don’t directly produce these products, customers trust them to provide quality products. Over time the way consumers buy products changes and to maintain relevance businesses must adapt their sales methods. The pens and Printers company is launching a new product line and are interested in knowing how different sales methods resonate with their customers.
 
-
-# Problem statement
-Launching a new product line is expensive and Pens and Printers need to ensure that they are using the most effective technique to sell their new product line.
+The purpose of this report is to outline the data validation and cleaning process, conduct exploratory analysis on sales methods, define a metric to track performance, and provide a recommendation based on findings.
 
 # Data Validation and Cleaning
 
@@ -32,11 +30,13 @@ Launching a new product line is expensive and Pens and Printers need to ensure t
 • The dataframe was checked for duplicate rows, and none were found. The final dataframe contained 15000 rows, 8 columns, and 0 null values.
 
 # Exploratory Analysis
-Customers for each sales method approach were found by grouping the customer_id column by sales method using the groupby() function and then counting each group of customers using the count() function. Email was the largest approach, with 6922 customers, followed by call with 4781 and email and call with 2223. 
+
+   Customers for each sales method approach were found by grouping the customer_id column by sales method using the groupby() function and then counting each group of customers using the count() function. Email was the largest approach, with 7466 customers, followed by call with 4962 and email + call with 2572. 
 
 Figure 1
+![Screenshot 2025-01-24 at 2.31.16 PM](Screenshot%202025-01-24%20at%202.31.16%E2%80%AFPM.png)
+<img width="591" alt="Screenshot 2025-01-24 at 2 31 16 PM" src="https://github.com/user-attachments/assets/7b1bc3cc-d9e3-4233-b112-72382729f75e" />
 
-<img width="490" alt="Screenshot 2025-01-17 at 11 29 37 PM" src="https://github.com/user-attachments/assets/a2f027ad-2077-41f3-a863-4b7d9d3fc8a1" />
 
 
 In order to gain a better understanding of the customer base, customers were grouped into histogram bins with a width of 4 based on their years as a customer using sns.histplot(). This resulted in a unimodal right-skewed histogram with the largest group of customers in the 0-4 range. The minimum and maximum years as a customer were 0 and 63, respectively. While not pictured, it is interesting to note that California, Texas, and New York account for 36.8% of customers. This was found by grouping customer ids using the groupby() function in conjunction with the count() and sort_values functions.
