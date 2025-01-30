@@ -39,6 +39,8 @@ Figure 1
 
 
 
+  
+
  Overall, the revenue per customer recorded in dollars had a mean of 95.85  and a standard deviation of 47.96. In addition to this, the revenue had a median value of 90.95 with an interquartile range of 55.10. 
 
 figure 2 
@@ -57,7 +59,6 @@ figure 3
 Figure 4
 
 <img width="596" alt="Screenshot 2025-01-24 at 3 31 05 PM" src="https://github.com/user-attachments/assets/57999cef-7744-4373-8c04-29f20cb97abf" />
-
 
 
   Over the six-week period, revenue per customer increased for all three sales methods; however, the email + call sales saw sharper increases, especially in weeks 2, 4, and 6.
