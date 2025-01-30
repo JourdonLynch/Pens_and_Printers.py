@@ -36,6 +36,7 @@ The purpose of this report is to outline the data validation and cleaning proces
 Figure 1
 
 <img width="591" alt="Screenshot 2025-01-24 at 2 31 16 PM" src="https://github.com/user-attachments/assets/7b1bc3cc-d9e3-4233-b112-72382729f75e" />
+
 #  
 
 
@@ -51,7 +52,8 @@ figure 2
 figure 3
 
 <img width="487" alt="Screenshot 2025-01-25 at 1 55 23 PM" src="https://github.com/user-attachments/assets/9ce747f8-f42d-462c-9c21-3325b60832a4" />
-#   
+
+#  
 
  Over the six week period the email method saw a sharp decline in total revenue, dropping from a weekly revenue of 248,122.68 down to 25,260.79. The call method saw fluctuations in its revenue, starting at a weekly revenue of 27,015.93 and ending at 29252.46. The email + call method experienced a sharp increase in weekly revenue recorded in dollars, starting at 20,007.40 and ending at 128,598.94.
 
