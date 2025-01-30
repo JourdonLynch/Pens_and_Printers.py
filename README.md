@@ -3,7 +3,7 @@
 # Introduction
 The Pens and Printers company founded in 1984 provides high-quality office products to large organizations. While they don’t directly produce these products, customers trust them to provide quality products. Over time the way consumers buy products changes and to maintain relevance businesses must adapt their sales methods. The pens and Printers company is launching a new product line and are interested in knowing how different sales methods resonate with their customers.
 
-The purpose of this report is to outline the data validation and cleaning process, conduct exploratory analysis on sales methods, define a metric to track performance, and provide a recommendation based on findings.
+The purpose of this report is to outline the data validation and cleaning process, conduct exploratory analysis on sales methods and customers, define a metric to track performance, and provide a recommendation based on findings.
 
 # Data Validation and Cleaning
 
@@ -34,52 +34,53 @@ The purpose of this report is to outline the data validation and cleaning proces
    Customers for each sales method approach were found by grouping the customer_id column by sales method using the groupby() function and then counting each group of customers using the count() function. Email was the largest approach, with 7466 customers, followed by call with 4962 and email + call with 2572. 
 
 Figure 1
-![Screenshot 2025-01-24 at 2.31.16 PM](Screenshot%202025-01-24%20at%202.31.16%E2%80%AFPM.png)
+
 <img width="591" alt="Screenshot 2025-01-24 at 2 31 16 PM" src="https://github.com/user-attachments/assets/7b1bc3cc-d9e3-4233-b112-72382729f75e" />
 
 
 
-In order to gain a better understanding of the customer base, customers were grouped into histogram bins with a width of 4 based on their years as a customer using sns.histplot(). This resulted in a unimodal right-skewed histogram with the largest group of customers in the 0-4 range. The minimum and maximum years as a customer were 0 and 63, respectively. While not pictured, it is interesting to note that California, Texas, and New York account for 36.8% of customers. This was found by grouping customer ids using the groupby() function in conjunction with the count() and sort_values functions.
+ Overall, the revenue per customer recorded in dollars had a mean of 95.85  and a standard deviation of 47.96. In addition to this, the revenue had a median value of 90.95 with an interquartile range of 55.10. 
 
 figure 2 
 
-<img width="637" alt="Screenshot 2025-01-12 at 2 12 05 PM" src="https://github.com/user-attachments/assets/a830e1dc-6ab2-4b80-b237-a5dbd99d566b" />
+<img width="489" alt="Screenshot 2025-01-24 at 10 48 40 PM" src="https://github.com/user-attachments/assets/ca92cadf-7e8f-42f3-8be1-30ec745845f5" />
 
-
-Overall, the revenue per customer recorded in dollars had a mean of 93.93 and a standard deviation of 47.44. In addition to this, the revenue had a median value of 89.50 with an interquartile range of 54.86. This was found by applying the mean(), std(), median(), and quantile() functions to the revenue column.
-
+   Revenue was then grouped by sales method and the mean, standard deviation, median, and interquartile range were calculated. The call method reported a mean of 47.60, a standard deviation of  8.45, a median of 47.60, and an interquartile range of 10.96. The email method reported a mean of 97.13, a standard deviation of 10.79, a median of 96.84, and an interquartile range of 16.07. The email + call method reported a mean of 183.65, a standard deviation of 27.04, a median of 183.65, and an interquartile range of 13.10. This was the highest among all sales strategies.
+   
 figure 3
-
-<img width="499" alt="Screenshot 2025-01-18 at 4 15 09 PM" src="https://github.com/user-attachments/assets/8bf781d5-afb7-4603-9f72-f026a0b4f685" />
-
-
-Revenue was then separated by sales method using .groupby() and the mean, standard deviation, median, and interquartile range were calculated using the methods stated previously. The email and call method reported a mean of 183.65, a standard deviation of 29.08, a median of 184.74, and an interquartile range of 35.34. This was the highest among all sales strategies. The call method reported a mean of 47.60, a standard deviation of 8.61, a median of 49.07, and an interquartile range of 11.21. The email method reported a mean of 97.13, a standard deviation of 11.21, a median of 95.58, and an interquartile range of 17.29.
-
-figure 4 
-
-<img width="493" alt="Screenshot 2025-01-12 at 2 38 00 PM" src="https://github.com/user-attachments/assets/ebf20833-3556-4cb3-bc4c-7cb53232037f" />
+<img width="487" alt="Screenshot 2025-01-25 at 1 55 23 PM" src="https://github.com/user-attachments/assets/9ce747f8-f42d-462c-9c21-3325b60832a4" />
 
 
-To understand how different sales methods performed at different points during the product launch, the revenue by sales method was further broken down by week. The median sales revenue per customer and minimum interquartile range value per customer increased for all sales methods throughout the period. However, the email + call sales method saw sharper increases, especially in the latter weeks.
+ Over the six week period the email method saw a sharp decline in total revenue, dropping from a weekly revenue of 248,122.68 down to 25,260.79. The call method saw fluctuations in its revenue, starting at a weekly revenue of 27,015.93 and ending at 29252.46. The email + call method experienced a sharp increase in weekly revenue recorded in dollars, starting at 20,007.40 and ending at 128,598.94.
 
-figure 5
-
-<img width="615" alt="Screenshot 2025-01-18 at 4 47 15 PM" src="https://github.com/user-attachments/assets/bb5a11dd-be41-4d8c-9ed3-b5f74df894a1" />
-
-
-Over the six week period the email and call method experienced a sharp increase in weekly revenue recorded in dollars, starting at 16,885 and ending at 111,152. The call method saw fluctuations in its revenue, starting at a weekly revenue of 26,159 and ending at 28,253. Lastly the email method saw a sharp decline in total revenue, dropping from a weekly revenue of 230,000 down to 23,706.
-
-figure 6
-
-<img width="691" alt="Screenshot 2025-01-12 at 4 06 23 PM" src="https://github.com/user-attachments/assets/45322356-135e-4a05-a4ae-693eaa59c2e7" />
-
-
-To track the effectiveness of sales methods, the revenue week-over-week metric was chosen. Revenue was grouped by weeks since product launch and sales method before summing the total for each week using the sum() function. After this, the unstack() function was used to pivot the data frame based on the sales_method column and return a dataframe with sales method as columns and weeks since launch as rows. The pct_change() function was then used to return the percent change of revenue week-over-week as a decimal. A consistently positive week-over-week metric, along with tracking total revenue over each week during the test period, will indicate which sales method is most effective. Results for the most recent week can be used as a basis moving forward. In week six email and call, call, and email recorded revenue week-over-week values of -12.35%, -47.21% and -68.12%% respectively.
+Figure 4
+<img width="596" alt="Screenshot 2025-01-24 at 3 31 05 PM" src="https://github.com/user-attachments/assets/57999cef-7744-4373-8c04-29f20cb97abf" />
 
 
 
-# Recommendations
-To support the goal of selling new products effectively the right sales method must be prioritized. Based on the revenue week-over-week metric, revenue spread across time, and the revenue spread across sales methods the email and call sales method is the most effecient at generating revenue making it the best method to sell the new product line and recoup the company's capital investment. It provides the highest average sales price per customer. While it required more effort than the email method alone, it required less total time investment than the call method. The email sales method showed greater revenue over the short term, however this was due to the method being used more frequently. It is recommended that the email and call method is used to  market the new product lines to customers.
+  Over the six-week period, revenue per customer increased for all three sales methods; however, the email + call sales saw sharper increases, especially in weeks 2, 4, and 6.
+
+Figure 5
+<img width="617" alt="Screenshot 2025-01-25 at 2 16 57 PM" src="https://github.com/user-attachments/assets/89139d14-f7ed-47c7-b3fa-38673f1894d6" />
 
 
+# Customer Demographics
 
+   In order to gain a better understanding of the customer base, customers were grouped into histogram bins with a width of 2 based on their years as a customer. This resulted in a unimodal right-skewed histogram with the largest group of customers in the 0-2 year range. The minimum and maximum years as a customer were 0 and 41, respectively. 
+
+Figure 6 
+<img width="574" alt="Screenshot 2025-01-24 at 8 22 14 PM" src="https://github.com/user-attachments/assets/bb983ca2-1767-4ea1-b903-8098c50edb8b" />
+
+   The top 5 states based on the number of customers were California, Texas, New York, Florida and Illinois respectively. These states made up 36.9% of the total customers with California being the only state to comprise more than 10% of customers.
+
+Figure 7 
+
+<img width="622" alt="Screenshot 2025-01-24 at 8 23 02 PM" src="https://github.com/user-attachments/assets/5dfa95ad-7232-4d2c-859b-f40db105c344" />
+
+# Metric:
+
+   To track the effectiveness of sales methods, the revenue week-over-week metric was chosen. Revenue was grouped by weeks since product launch and sales method before summing the total for each week using the sum() function. After this, the unstack() function was used to pivot the data frame based on the sales_method column and return a dataframe with sales method as columns and weeks since launch as rows. The pct_change() function was then used to return the percent change of revenue week-over-week as a decimal. A consistently positive week-over-week metric, along with tracking total revenue over each week during the test period, will indicate which sales method is most effective. Results for the most recent week can be used as a basis moving forward. In week six email, call, and email + call recorded revenue week-over-week values of -68.50%, -47.08% and -12.63% respectively. 
+
+# Recommendations: 
+
+   To support the goal of selling new products effectively the right sales method must be prioritized. Based on the average revenue per customer, revenue over time, and revenue week-over-week(RWOW) metric the email + call method should be selected as it experienced the greatest growth and had a RWOW that was the most consistently positive and therefore the greatest long-term potential.
