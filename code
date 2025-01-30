@@ -1,0 +1,135 @@
+#Importing necessary librariees
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+#Data Validation
+Product_Sales = pd.read_csv('product_sales.csv')
+print(Product_Sales.head())
+print(Product_Sales.dtypes)
+print(Product_Sales.isnull().sum())
+
+
+#Data Cleaning
+Product_Sales['state'] = Product_Sales['state'].astype(str)
+Product_Sales['sales_method'] = Product_Sales['sales_method'].astype(str)
+Product_Sales['customer_id'] = Product_Sales['customer_id'].astype(str)
+
+#Replacing incorrectly formatted data
+Product_Sales['sales_method'] = Product_Sales['sales_method'].replace({'em + call': 'Email + Call', 'email': 'Email'})
+Product_Sales['sales_method'].value_counts()
+
+Product_Sales.dropna(subset=['revenue'],inplace = True)
+
+#Customer id was checked to ensure there were no duplicates
+print('Count of customer_id' + str(Product_Sales['customer_id'].count()))
+print('Count of unuqie customer_id' + str(Product_Sales['customer_id'].nunique()))
+
+
+
+#Customer Demographics
+
+#Count of Years as Customer
+sns.histplot(x = 'years_as_customer',data = Product_Sales, bins = 20,binwidth= 4)
+plt.title('Count of Years as Customer')
+plt.xlabel('Bins')
+plt.show()
+
+#Min and Max years as a custoemr
+print(Product_Sales['years_as_customer'].min())
+print(Product_Sales['years_as_customer'].max())
+
+#How many customers are in each state?
+customers_by_state = Product_Sales.groupby('state')['customer_id'].sum().sort_values(ascending = False)
+print(customers_by_state)
+
+
+# Percentage of customers in top 3 states
+Top_3_States = Product_Sales[Product_Sales['state'].isin(['California','Texas','New York'])].count()
+Other_States = Product_Sales[~Product_Sales['state'].isin(['California','Texas','New York'])].count()
+print(Top_3_States)
+print(Other_States)
+print('Percentage of customers in top 3 states' + ': ' + str((Top_3_States/Other_States)*100))
+
+#How many products were sold in each state?
+products_sold_by_state = Product_Sales.groupby('state')['nb_sold'].count().sort_values(ascending = False)
+print(products_sold_by_state)
+
+
+
+#Sales Method Breakdown
+
+#How many customers were there for each approach?
+count_of_customers = Product_Sales.groupby('sales_method')['customer_id'].count()
+print(count_of_customers)
+
+#Barplot of customers per sales method
+sns.catplot(x = 'sales_method',data = Product_Sales, kind = 'count',hue = 'sales_method',order=['Email + Call','Call','Email'])
+plt.title('Count of Sales Method')
+plt.show()
+
+
+#What does the distribition of the revenue look like overall?
+
+#Mean and stanard deviation
+print('Mean' + ': ' + str(Product_Sales['revenue'].mean().round(2)))
+print('Standard Deviation' + ': ' + str(Product_Sales['revenue'].std(ddof=1).round(2)))
+
+#median and interquartile range
+q1 = Product_Sales['revenue'].quantile(0.25)
+q3 = Product_Sales['revenue'].quantile(0.75)
+iqr = q3 - q1
+print('Median' + ': ' + str(Product_Sales['revenue'].median().round(2)))
+print('Interquartile Range' + ': ' + str(iqr.round(2)))
+
+#Boxplot of revenue
+sns.catplot(y = 'revenue',data = Product_Sales, kind = 'box')
+plt.title('Revenue Spread')
+plt.show()
+
+
+#What is the distribution of revenue for each sales method?
+#Mean and standard deviation per sales method
+print('Mean' + ': ' + str(Product_Sales.groupby('sales_method')['revenue'].mean().round(2)))
+print('Standard Deviation' + ': ' + str(Product_Sales.groupby('sales_method')['revenue'].std(ddof= 1).round(2)))
+
+#Median and interquartile range per sales method
+Q1 = Product_Sales.groupby('sales_method')['revenue'].quantile(.25)
+Q3 = Product_Sales.groupby('sales_method')['revenue'].quantile(.75)
+IQR = Q3 - Q1
+print('Median' + ': ' + str(Product_Sales.groupby('sales_method')['revenue'].median()))
+print('Interquartile Range' + ': ' + str(IQR.round(2)))
+
+#Boxplot of revenue per sales method
+sns.catplot(x= 'sales_method',y = 'revenue',data = Product_Sales, kind = 'box',hue = 'sales_method')
+plt.title('Revenue Spread Across Methods')
+plt.show()
+
+
+#grouped revenue by week and sales revenue
+grouped_revenue = Product_Sales.groupby(['week','sales_method'])['revenue']
+for (week, sales_method), revenue in grouped_revenue:
+    print(f"Week: {week}, Sales Method: {sales_method}, Revenue: {revenue.sum()}")
+
+#Revenue spread across time per sales method
+sns.relplot(x = 'week',y = 'revenue',data = Product_Sales,hue = 'sales_method',kind = 'line',estimator = sum)
+plt.title('Revenue Spread Across Time')
+plt.show()
+
+#Visualization of revenue distribution over time
+sns.catplot(x='week', y='revenue', data=Product_Sales, hue='sales_method', kind='box')
+plt.title('Revenue Distribution by Week and Sales Method')
+plt.show()
+
+
+#How can revenue change be tracked week-to-week
+#Percent Change in Revenue WOW
+weekly_percent_change = Product_Sales.groupby(['week','sales_method'])['revenue'].sum().unstack()
+print(weekly_percent_change)
+print(weekly_percent_change.pct_change())
+
+
+#Count of customers by sales method and week
+Product_Sales.groupby(['sales_method', 'week'])['customer_id'].count().unstack().plot(kind='bar')
+plt.title('Customer ID Count by Sales Method and Week')
+plt.show()
