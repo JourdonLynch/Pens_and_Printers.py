@@ -36,14 +36,14 @@ The purpose of this report is to outline the data validation and cleaning proces
 Figure 1
 
 <img width="591" alt="Screenshot 2025-01-24 at 2 31 16 PM" src="https://github.com/user-attachments/assets/7b1bc3cc-d9e3-4233-b112-72382729f75e" />
-
+#  
 
 
     
  Overall, the revenue per customer recorded in dollars had a mean of 95.85  and a standard deviation of 47.96. In addition to this, the revenue had a median value of 90.95 with an interquartile range of 55.10. 
 
 figure 2 
-#   
+ 
 <img width="489" alt="Screenshot 2025-01-24 at 10 48 40 PM" src="https://github.com/user-attachments/assets/ca92cadf-7e8f-42f3-8be1-30ec745845f5" />
 
    Revenue was then grouped by sales method and the mean, standard deviation, median, and interquartile range were calculated. The call method reported a mean of 47.60, a standard deviation of  8.45, a median of 47.60, and an interquartile range of 10.96. The email method reported a mean of 97.13, a standard deviation of 10.79, a median of 96.84, and an interquartile range of 16.07. The email + call method reported a mean of 183.65, a standard deviation of 27.04, a median of 183.65, and an interquartile range of 13.10. This was the highest among all sales strategies.
@@ -51,7 +51,7 @@ figure 2
 figure 3
 
 <img width="487" alt="Screenshot 2025-01-25 at 1 55 23 PM" src="https://github.com/user-attachments/assets/9ce747f8-f42d-462c-9c21-3325b60832a4" />
-
+#   
 
  Over the six week period the email method saw a sharp decline in total revenue, dropping from a weekly revenue of 248,122.68 down to 25,260.79. The call method saw fluctuations in its revenue, starting at a weekly revenue of 27,015.93 and ending at 29252.46. The email + call method experienced a sharp increase in weekly revenue recorded in dollars, starting at 20,007.40 and ending at 128,598.94.
 
