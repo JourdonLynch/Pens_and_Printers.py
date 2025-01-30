@@ -48,12 +48,14 @@ figure 2
    Revenue was then grouped by sales method and the mean, standard deviation, median, and interquartile range were calculated. The call method reported a mean of 47.60, a standard deviation of  8.45, a median of 47.60, and an interquartile range of 10.96. The email method reported a mean of 97.13, a standard deviation of 10.79, a median of 96.84, and an interquartile range of 16.07. The email + call method reported a mean of 183.65, a standard deviation of 27.04, a median of 183.65, and an interquartile range of 13.10. This was the highest among all sales strategies.
    
 figure 3
+
 <img width="487" alt="Screenshot 2025-01-25 at 1 55 23 PM" src="https://github.com/user-attachments/assets/9ce747f8-f42d-462c-9c21-3325b60832a4" />
 
 
  Over the six week period the email method saw a sharp decline in total revenue, dropping from a weekly revenue of 248,122.68 down to 25,260.79. The call method saw fluctuations in its revenue, starting at a weekly revenue of 27,015.93 and ending at 29252.46. The email + call method experienced a sharp increase in weekly revenue recorded in dollars, starting at 20,007.40 and ending at 128,598.94.
 
 Figure 4
+
 <img width="596" alt="Screenshot 2025-01-24 at 3 31 05 PM" src="https://github.com/user-attachments/assets/57999cef-7744-4373-8c04-29f20cb97abf" />
 
 
@@ -61,6 +63,7 @@ Figure 4
   Over the six-week period, revenue per customer increased for all three sales methods; however, the email + call sales saw sharper increases, especially in weeks 2, 4, and 6.
 
 Figure 5
+
 <img width="617" alt="Screenshot 2025-01-25 at 2 16 57 PM" src="https://github.com/user-attachments/assets/89139d14-f7ed-47c7-b3fa-38673f1894d6" />
 
 
@@ -69,6 +72,7 @@ Figure 5
    In order to gain a better understanding of the customer base, customers were grouped into histogram bins with a width of 2 based on their years as a customer. This resulted in a unimodal right-skewed histogram with the largest group of customers in the 0-2 year range. The minimum and maximum years as a customer were 0 and 41, respectively. 
 
 Figure 6 
+
 <img width="574" alt="Screenshot 2025-01-24 at 8 22 14 PM" src="https://github.com/user-attachments/assets/bb983ca2-1767-4ea1-b903-8098c50edb8b" />
 
    The top 5 states based on the number of customers were California, Texas, New York, Florida and Illinois respectively. These states made up 36.9% of the total customers with California being the only state to comprise more than 10% of customers.
