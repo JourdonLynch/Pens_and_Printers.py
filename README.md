@@ -39,8 +39,7 @@ Figure 1
 
 
 
-  
-
+    
  Overall, the revenue per customer recorded in dollars had a mean of 95.85  and a standard deviation of 47.96. In addition to this, the revenue had a median value of 90.95 with an interquartile range of 55.10. 
 
 figure 2 
