@@ -82,9 +82,11 @@ Figure 6
 
 <img width="574" alt="Screenshot 2025-01-24 at 8 22 14 PM" src="https://github.com/user-attachments/assets/bb983ca2-1767-4ea1-b903-8098c50edb8b" />
 
+#  
+
    The top 5 states based on the number of customers were California, Texas, New York, Florida and Illinois respectively. These states made up 36.9% of the total customers with California being the only state to comprise more than 10% of customers.
 
-#  
+
 
 Figure 7 
 
