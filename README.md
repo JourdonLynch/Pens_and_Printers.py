@@ -47,9 +47,10 @@ figure 2
  
 <img width="489" alt="Screenshot 2025-01-24 at 10 48 40 PM" src="https://github.com/user-attachments/assets/ca92cadf-7e8f-42f3-8be1-30ec745845f5" />
 
-   Revenue was then grouped by sales method and the mean, standard deviation, median, and interquartile range were calculated. The call method reported a mean of 47.60, a standard deviation of  8.45, a median of 47.60, and an interquartile range of 10.96. The email method reported a mean of 97.13, a standard deviation of 10.79, a median of 96.84, and an interquartile range of 16.07. The email + call method reported a mean of 183.65, a standard deviation of 27.04, a median of 183.65, and an interquartile range of 13.10. This was the highest among all sales strategies.
+#
 
-#  
+   Revenue was then grouped by sales method and the mean, standard deviation, median, and interquartile range were calculated. The call method reported a mean of 47.60, a standard deviation of  8.45, a median of 47.60, and an interquartile range of 10.96. The email method reported a mean of 97.13, a standard deviation of 10.79, a median of 96.84, and an interquartile range of 16.07. The email + call method reported a mean of 183.65, a standard deviation of 27.04, a median of 183.65, and an interquartile range of 13.10. This was the highest among all sales strategies.
+ 
 
 figure 3
 
