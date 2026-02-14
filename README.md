@@ -1,7 +1,8 @@
 # Pens_and_Printers.py
 
 # Introduction
-The Pens and Printers company founded in 1984 provides high-quality office products to large organizations. While they don’t directly produce these products, customers trust them to provide quality products. Over time the way consumers buy products changes and to maintain relevance businesses must adapt their sales methods. The pens and Printers company is launching a new product line and are interested in knowing how different sales methods resonate with their customers.
+Founded in 1984, Pens and Printers provides high-quality office products to large organizations. Although the company does not manufacture these products directly, it has built a reputation for reliability and quality. As purchasing behaviors evolve, businesses must adapt their sales strategies to remain competitive. With the launch of a new product line, Pens and Printers seeks to understand how different sales methods resonate with its customers.
+This report outlines the data validation and cleaning process, presents an exploratory analysis of sales methods and customer behavior, establishes a performance metric, and provides recommendations based on the findings.
 
 The purpose of this report is to outline the data validation and cleaning process, conduct exploratory analysis on sales methods and customers, define a metric to track performance, and provide a recommendation based on findings.
 
@@ -95,7 +96,8 @@ Figure 7
 
 # Metric:
 
-   To track the effectiveness of sales methods, the revenue week-over-week metric was chosen. Revenue was grouped by weeks since product launch and sales method before summing the total for each week using the sum() function. After this, the unstack() function was used to pivot the data frame based on the sales_method column and return a dataframe with sales method as columns and weeks since launch as rows. The pct_change() function was then used to return the percent change of revenue week-over-week as a decimal. A consistently positive week-over-week metric, along with tracking total revenue over each week during the test period, will indicate which sales method is most effective. Results for the most recent week can be used as a basis moving forward. In week six email, call, and email + call recorded revenue week-over-week values of -68.50%, -47.08% and -12.63% respectively. 
+   To evaluate the effectiveness of each sales method, a week-over-week revenue metric was developed. Revenue was grouped by weeks since product launch and by sales method, then aggregated using the sum() function. The unstack() function was subsequently applied to pivot the dataset, producing a dataframe with sales methods as columns and weeks since launch as rows. Week-over-week percentage changes in revenue were then calculated using the pct_change() function.
+A consistently positive week-over-week trend, alongside total weekly revenue during the test period, serves as an indicator of sales method effectiveness. The most recent performance provides a basis for future strategy. In week six, the email, call, and email + call methods recorded week-over-week revenue changes of −68.50%, −47.08%, and −12.63%, respectively. 
 
 # Recommendations: 
 
